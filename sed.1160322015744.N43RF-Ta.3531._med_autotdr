@@ -1,0 +1,20 @@
+optimal-beamwidth is 3.0 degrees
+BB-max-neg-folds is 4
+BB-max-pos-folds is 4
+BB-use-ac-wind
+BB-gates-averaged is 15 gates
+! for-each-ray
+copy VG to VV
+remove-ring in VG from 0. to 0.35 km.
+remove-ring in VG from 67. to 75. km.
+remove-only-surface in VG
+threshold VG on SQI below 0.3
+clear-bad-flags
+set-bad-flags when WIDTH above 4.
+and-bad-flags when ZZ below 0.
+assert-bad-flags in VG
+copy VG to V1
+clear-bad-flags
+BB-unfolding of VG
+copy-bad-flags from VG
+assert-bad-flags in ZZ
