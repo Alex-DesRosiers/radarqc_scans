@@ -1,0 +1,14 @@
+BB-max-pos-folds is 1
+BB-max-neg-folds is 1
+BB-use-local-wind
+ew-wind is 7.5
+ns-wind is 13.0
+a-speckle is 1 gates
+BB-gates-averaged is 20 gates
+! for-each-ray
+copy VEL to VU
+threshold VU on RHO above 1.1
+threshold VU on RHO below 0.8
+threshold VU on SW above 8.0
+despeckle VU
+BB-unfolding of VU
